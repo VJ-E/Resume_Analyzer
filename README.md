@@ -5,9 +5,17 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Screenshots
+
+### Dashboard View
+![Dashboard Preview](./public/preview_1.png)
+
+### Analysis Results
+![Analysis Results](./public/preview_2.png)
+
 An intelligent career development platform that helps job seekers optimize their resumes, identify skill gaps, and improve their chances of landing their dream jobs using AI-powered analysis. The application provides actionable insights and recommendations to enhance your resume and career prospects.
 
-## 🎯 Features
+## Features
 
 - **Smart Resume Parsing**: Extract and analyze information from PDF, DOCX, and TXT resumes with high accuracy
 - **AI-Powered Role Classification**: Get instant role predictions based on your resume content
@@ -26,7 +34,7 @@ An intelligent career development platform that helps job seekers optimize their
 - **Interactive Dashboard**: Beautiful, responsive UI built with React and shadcn/ui
 - **RESTful API**: FastAPI backend with comprehensive documentation
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -103,7 +111,7 @@ PYTHONUNBUFFERED=1
 PYTHONPATH=.
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: 
   - React 18 with TypeScript
@@ -119,7 +127,7 @@ PYTHONPATH=.
   - Sentence Transformers for NLP tasks
   - scikit-learn for similarity calculations
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 resume-analyzer/
@@ -136,14 +144,14 @@ resume-analyzer/
 └── README.md            # This file
 ```
 
-## 🚀 Recent Improvements
+## Recent Improvements
 
 - **Enhanced Skill Extraction**: Improved algorithm to accurately extract technology/skill names from recommendations
 - **CUDA Support**: Added GPU acceleration for faster AI model inference
 - **Error Handling**: Better error messages and recovery mechanisms
 - **UI/UX Improvements**: More intuitive interface with better feedback
 
-## 📚 API Documentation
+## API Documentation
 
 Once the backend server is running, you can access the following API endpoints:
 
@@ -159,7 +167,7 @@ Once the backend server is running, you can access the following API endpoints:
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
 
-## 🧪 Testing
+## Testing
 
 Run the test suite with:
 
@@ -171,7 +179,7 @@ pytest
 npm test
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -190,11 +198,11 @@ We welcome contributions! Here's how you can help:
 - **Backend**: Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 - **Git**: Write clear, concise commit messages
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [FastAPI](https://fastapi.tiangolo.com/) for the awesome backend framework
 - [React](https://reactjs.org/) for the frontend library
@@ -203,7 +211,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
 - [FastAPI](https://fastapi.tiangolo.com/) for the amazing backend framework
