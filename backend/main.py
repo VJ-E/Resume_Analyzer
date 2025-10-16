@@ -162,8 +162,20 @@ async def classify_resume(payload: Dict[str, str]):
     if not resume_text.strip():
         raise HTTPException(status_code=400, detail="Missing resume text")
 
-    emb_resume = sbert_model.encode([resume_text])
-    sims = cosine_similarity(emb_resume, role_embeddings)[0]
+    # Encode the resume text
+    emb_resume = sbert_model.encode([resume_text], convert_to_tensor=True)
+    
+    # Convert tensors to CPU and then to NumPy arrays if they're on GPU
+    if hasattr(emb_resume, 'cpu'):
+        emb_resume = emb_resume.cpu().numpy()
+    
+    if hasattr(role_embeddings, 'cpu'):
+        role_embeddings_np = role_embeddings.cpu().numpy()
+    else:
+        role_embeddings_np = role_embeddings
+    
+    # Calculate cosine similarity
+    sims = cosine_similarity(emb_resume, role_embeddings_np)[0]
 
     # get top 3
     scored = list(zip(role_names, sims))

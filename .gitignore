@@ -18,6 +18,7 @@ dist-ssr/
 build/
 .next/
 out/
+.next
 
 # Environment variables
 .env
@@ -47,6 +48,76 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Local development
+.cache/
+.temp/
+.tmp/
+.temp*
+
+# Misc
+.DS_Store
+*.pem
+*.p12
+*.key
+*.crt
+*.csr
+
+# Local Netlify folder
+.netlify
+
+# Vite
+*.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python cache and virtual environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+
+# Node modules and build directories
+node_modules/
+build/
+dist/
+.next/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System Files
+.DS_Store
+Thumbs.db
 
 # Testing
 coverage/
@@ -85,3 +156,4 @@ Thumbs.db
 
 
 .venv
+/backend/venv

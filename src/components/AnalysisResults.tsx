@@ -301,11 +301,41 @@ export const AnalysisResults = ({ data }: AnalysisResultsProps) => {
                             {item.priority}
                           </Badge>
                         </div>
-                        <Button variant="outline" size="sm" className="w-full" asChild>
-                          <a href={item.url} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-3 h-3 mr-2" />
-                            Learn More
-                          </a>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full" 
+                          onClick={() => {
+                            // Extract the most relevant part of the title for searching
+                            let searchQuery = item.title;
+                            
+                            // Try to extract technology/skill from common patterns
+                            const patterns = [
+                              /(?:Learn|Add|Improve|Consider adding|Experience with|Knowledge of|Skills? in|Familiarity with|Proficiency in)[\s:]+([\w/+#.-]+)/i,
+                              /^[^:]+:?\s*([\w/+#.-]+)/i,
+                              /([A-Z][A-Z0-9/+#.-]*)/,  // Matches uppercase words/acronyms
+                              /([\w/+#.-]+)/            // Fallback to first word-like sequence
+                            ];
+                            
+                            for (const pattern of patterns) {
+                              const match = item.title.match(pattern);
+                              if (match && match[1]) {
+                                searchQuery = match[1];
+                                // Remove any trailing punctuation
+                                searchQuery = searchQuery.replace(/[.,;:!?]$/, '');
+                                break;
+                              }
+                            }
+                            
+                            window.open(
+                              `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, 
+                              '_blank', 
+                              'noopener,noreferrer'
+                            );
+                          }}
+                        >
+                          <ExternalLink className="w-3 h-3 mr-2" />
+                          Search on Google
                         </Button>
                       </div>
                     ))}
